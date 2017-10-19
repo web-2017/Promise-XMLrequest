@@ -17,7 +17,7 @@ function sendAj(url){
 
 sendAjax.addEventListener('click', () => {
     sendAj('list.json').then( file =>{
-        container.innerText = file;
         let result = JSON.parse(file);
+        console.log(result)
     })
 });
