@@ -18,6 +18,8 @@ function sendAj(url){
 
 sendAjax.addEventListener('click', () => {
     sendAj('list.json').then( file =>{
-        console.log(file);
+        for({name} of file){
+            container.innerHTML += name + '<br>'
+        }
     })
 });
