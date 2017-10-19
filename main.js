@@ -5,8 +5,9 @@ function sendAj(url){
         let xhr = new XMLHttpRequest();
         
         xhr.open('GET', url);
+        xhr.responseType = 'json'; //тип ответа от сервера json
         xhr.addEventListener('load', ()=>{
-            resolve(xhr.responseText);
+            resolve(xhr.response); //тут свойтво меняется на просто response
         });
         xhr.addEventListener('load', ()=>{
             reject();
@@ -17,7 +18,6 @@ function sendAj(url){
 
 sendAjax.addEventListener('click', () => {
     sendAj('list.json').then( file =>{
-        let result = JSON.parse(file);
-        console.log(result)
+        console.log(file);
     })
 });
